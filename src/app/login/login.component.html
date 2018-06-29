@@ -1,0 +1,31 @@
+
+
+<div class="row login">
+
+<div class="card" style="width: 600px;margin-left:350px;margin-top: 70px;height:300px;">
+  <div *ngIf="show" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hey</strong> Please select the user type.
+    <button type="button" class="close" data-dismiss="alert" (click)="canCel()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="card-ln">
+    <p class="card-tl">Log in to Mcclatchy</p>
+    <div class="in2" align="center">
+      <input type="text" class="form-control" placeholder="Email address or phone number"/>
+    <div style="margin-top:10px">
+      <input type="text" class="form-control" placeholder="Password"/>
+    </div>
+    <div style="margin-top:10px">
+    <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+    <input type="radio" name="manager" value="editor"  ngModel> Editor
+    <input type="radio" name="manager" value="agent" ngModel> Agent<br>
+
+      <button style="margin-top:15px;" type="button" class="btn btn-primary" (click)="onClickSubmit(userlogin.value)">Log In</button>
+
+  </form>
+  </div>
+  </div>
+</div>
+</div>
+</div>

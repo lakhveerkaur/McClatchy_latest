@@ -1,0 +1,27 @@
+
+.card-tl{
+ text-align: center;
+ font-family: inherit;
+ font-size: 18px;
+ line-height: 22px;
+ margin-top: 30px;
+ color:rgb(0,92,165);
+ font-weight: bold;
+}
+/* .card-ln{
+ height:300px;
+} */
+.form-control {
+width:60%;
+}
+.in2{
+ margin-top: 30px;
+}
+.login{
+ background-color: #dee2e6;
+ min-height: 600px;
+ margin-top:50px;
+}
+.btn{
+ background-color: rgb(0,92,165);
+}

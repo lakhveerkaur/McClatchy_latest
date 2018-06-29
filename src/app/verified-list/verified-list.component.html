@@ -1,0 +1,108 @@
+
+
+
+  <div class="row">
+    <div class="col-md">
+      <nav style="text-align:right;margin-top:100px;height:40px;">
+        <h6>  <a style="margin-right:60px" routerLink="/editor/newsList"  >News Stories</a>
+          <a style="margin-right:60px" routerLink="/editor/verifiedList"  >Verified News</a>
+          <a style="margin-right:60px" >View Profile</a>
+          <a style="margin-right:60px" >Logout</a>
+        </h6>
+      </nav>
+    </div>
+  </div>
+<div class="login">
+  <div  class="row">
+    <div class="col-md-1">
+    </div>
+    <div style="margin-top:10px" class="col-md-10">
+      <b><p style="text-align:center">News Stories</p></b>
+      <form #userlogin = "ngForm" (ngSubmit) = "onApprove(userlogin.value)">
+        <table id="t01">
+        <tr>
+          <th>Select</th>
+          <th>Story Id</th>
+          <th >Story</th>
+          <th>Received on</th>
+          <th>Originally Published On</th>
+          <th>Current Total Reactions</th>
+          <th>Current Total Shares</th>
+          <th>Predicted Shares in 24 Hours</th>
+          <th>Action</th>
+          <th>Assigned To</th>
+          <th>Status</th>
+          <th>Result</th>
+          <th>Trust Index</th>
+        </tr>
+
+        <tr *ngFor="let news of newslist">
+          <td class={{news.class}}> <input type="checkbox" [(ngModel)]="news.checked" [value]="news.Story_id" [name]="news.Story_id"></td>
+          <td class={{news.class}}>{{news.Story_id}}</td>
+          <td class={{news.class}}>{{news.Story}}</td>
+          <td class={{news.class}}>{{news.Received_on}}</td>
+          <td class={{news.class}}>{{news.Originally_Published}}</td>
+          <td class={{news.class}}>{{news.Current_Total_Reactions}}</td>
+          <td class={{news.class}}>{{news.Current_Total_Shares}}</td>
+          <td class={{news.class}}>{{news.Predicted_Shares_in_24Hr}}</td>
+          <td class={{news.class}}>{{news.Action}}</td>
+          <td class={{news.class}}>{{news.Assigned_to}}</td>
+          <td class={{news.class}}>{{news.Status}}</td>
+          <td class={{news.class}}>{{news.Result}}</td>
+          <td class={{news.class}}>{{news.Trust_Index}}</td>
+        </tr>
+
+      </table>
+
+      <div style="margin-left:450px;margin-top:20px">
+        <button style="margin-right:10px" type="button" (click) = "onApprove(userlogin.value)" class="btn btn-primary">Approve</button>
+        <button type="button" class="btn btn-secondary">Cancel</button>
+      </div>
+          </form>
+      </div>
+
+      </div>
+    </div>
+
+<!--
+<div class="row">
+  <div class="col-md">
+    <nav style="text-align:right;margin-top:100px;height:40px">
+      <h6>  <a style="margin-right:60px" routerLink="/editor/newsList"  >News Stories</a>
+        <a style="margin-right:60px" routerLink="/editor/verifiedList"  >Verified News</a>
+        <a style="margin-right:60px" >View Profile</a>
+        <a style="margin-right:60px" >Logout</a>
+      </h6>
+    </nav>
+  </div>
+</div>
+
+
+  <div class="login">
+    <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div style="margin-top:10px" class="col-md-6">
+        <b><p style="text-align:center">Verified News</p></b>
+      <form  #userlogin = "ngForm" (ngSubmit) = "onApprove(userlogin.value)">
+        <ul class="list-group">
+          <li *ngFor="let news of newslist">
+            <div><li class={{news.name}}><input type="checkbox" [(ngModel)]="news.checked" [value]="news.name" [name]="news.name">  {{news.value}}</div>
+
+          </li>
+        </ul>
+      //<ul class="list-group">
+      //  <li class="list-group-item list-group-item-success"><input type="checkbox" name="News1" value="true" ngModel> Checked Dapibus ac facilisis in</li>
+      //  <li class="list-group-item list-group-item-info"><input type="checkbox" name="News2" value="info" ngModel> Cras sit amet nibh libero</li>
+      //  <li class="list-group-item list-group-item-warning"><input type="checkbox" name="News3" value="Patially fake " ngModel> Porta ac consectetur ac</li>
+      //  <li class="list-group-item list-group-item-danger"><input type="checkbox" name="News4" value="Fake" ngModel> Vestibulum at eros</li>
+  //  </ul>
+    <div style="margin-left:250px;margin-top:20px">
+      <button style="margin-right:10px" type="button" (click) = "onApprove(userlogin.value)" class="btn btn-primary">Approve</button>
+      <button type="button" class="btn btn-secondary">Cancel</button>
+    </div>
+    </form>
+   </div>
+    </div>
+
+</div> -->

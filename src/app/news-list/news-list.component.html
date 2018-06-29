@@ -1,0 +1,88 @@
+
+  <div class="row">
+    <div class="col-md">
+      <nav style="text-align:right;margin-top:100px;height:40px;">
+        <h6>  <a style="margin-right:60px" routerLink="/editor/newsList"  >News Stories</a>
+          <a style="margin-right:60px" routerLink="/editor/verifiedList"  >Verified News</a>
+          <a style="margin-right:60px" >View Profile</a>
+          <a style="margin-right:60px" >Logout</a>
+        </h6>
+      </nav>
+    </div>
+  </div>
+<div class="login">
+  <div  class="row">
+    <div class="col-md-1">
+    </div>
+    <div style="margin-top:10px" class="col-md-10">
+      <b><p style="text-align:center">News Stories</p></b>
+      <form  #userlogin = "ngForm" (ngSubmit) = "onApprove(userlogin.value)">
+        <table id="t01">
+        <tr>
+          <th>Story Id</th>
+          <th >Story</th>
+          <th>Received on</th>
+          <th>Originally Published On</th>
+          <th>Current Total Reactions</th>
+          <th>Current Total Shares</th>
+          <th>Predicted Shares in 24 Hours</th>
+          <th>Action</th>
+          <th>Assigned To</th>
+          <th>Status</th>
+          <th>Result</th>
+          <th>Trust Index</th>
+        </tr>
+        <tr *ngFor="let news of newslist">
+          <td>{{news.Story_id}}</td>
+          <td >{{news.Story}}</td>
+          <td>{{news.Received_on}}</td>
+          <td>{{news.Originally_Published}}</td>
+          <td>{{news.Current_Total_Reactions}}</td>
+          <td>{{news.Current_Total_Shares}}</td>
+          <td>{{news.Predicted_Shares_in_24Hr}}</td>
+          <td>{{news.Action}}</td>
+          <td>
+            <div class="form-group" class="dropdown" style="float: right;">
+              <div *ngIf="news.Assigned_to == ''">
+              <select class="form-control" id="sel1" ngModel name={{news.Story_id}}>
+                <option *ngFor="let option of options" [value]="option.name">{{option.name}}</option>
+              </select>
+            </div>
+            <div *ngIf="news.Assigned_to != ''">
+               <p>{{news.Assigned_to}}</p>
+            </div>
+            </div>
+          </td>
+          <td>{{news.Status}}</td>
+          <td>{{news.Result}}</td>
+          <td>{{news.Trust_Index}}</td>
+        </tr>
+      </table>
+      <div style="margin-left:450px;margin-top:20px">
+        <button style="margin-right:10px" type="button" (click) = "onApprove(userlogin.value)" class="btn btn-primary">Assign</button>
+        <button type="button" class="btn btn-secondary">Cancel</button>
+      </div>
+        <!-- <ul class="list-group">
+          <li *ngFor="let news of newslist">
+            <div style="width:600px" class="card">
+              <div class="card-body">
+                  {{news.value}}
+                  <div class="dropdown" style="float: right;">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Agent
+                  </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li *ngFor="let option of options">
+                          <a class="dropdown-item" href="#">{{option.name}}</a>
+                        </li>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul> -->
+          </form>
+      </div>
+
+      </div>
+    </div>

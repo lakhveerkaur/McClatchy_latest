@@ -1,0 +1,24 @@
+img{
+ margin-left: 110px;
+ width:250px;
+}
+
+/* .card-ln{
+ height:300px;
+} */
+.form-control {
+width:60%;
+}
+
+.login{
+ background-color: #dee2e6;
+ min-height: 600px;
+ margin-top:90px;
+}
+
+.menu li{
+  display: inline;
+}
+ul {
+  list-style-type: none;
+}

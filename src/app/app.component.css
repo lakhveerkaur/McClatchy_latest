@@ -1,0 +1,14 @@
+
+.navbar {
+    height:90px;
+    background-color:white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0,0.3);
+  }
+ img{
+  margin-left: 60px;
+  width:250px;
+
+}
+.boxx{
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0,0.3);
+}
